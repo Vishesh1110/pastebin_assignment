@@ -48,7 +48,7 @@ export default function Home() {
   const copyToClipboard = () => {
     navigator.clipboard.writeText(generatedLink);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setTimeout(() => setCopied(false), 3000);
   };
 
   return (
