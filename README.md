@@ -2,6 +2,9 @@
 
 A modern web application for sharing text snippets with customizable expiration options. Built with Next.js, TypeScript, and MongoDB.
 
+## Demo Video
+![Image](https://github.com/user-attachments/assets/8bf223d6-1924-4c7a-8989-5ebefdd6d0d3)
+
 ## Features Implemented
 
 ### Core Features
@@ -81,17 +84,7 @@ cd pastebin
 npm install
 ```
 
-### Step 3: Setup MongoDB
-
-#### Option A: MongoDB Atlas (Recommended)
-1. Go to [mongodb.com/cloud/atlas](https://www.mongodb.com/cloud/atlas)
-2. Create a free account
-3. Create a new cluster (choose free tier)
-4. Click "Connect" → "Drivers"
-5. Copy your connection string
-6. Go to "Network Access" → "Add IP Address" → "Allow Access from Anywhere" (0.0.0.0/0)
-
-### Step 4: Configure Environment Variables
+### Step 3: Configure Environment Variables
 Create a `.env.local` file in the root directory:
 
 ```env
@@ -115,59 +108,15 @@ declare global {
 export {};
 ```
 
-### Step 6: Run the Development Server
+### Step 4: Run the Development Server
 ```bash
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Step 7: Build for Production (Optional)
-```bash
-npm run build
-npm start
-```
-
-## 📁 Project Structure
-
-```
-pastebin/
-├── src/
-│   ├── app/
-│   │   ├── api/
-│   │   │   └── text/
-│   │   │       ├── route.ts           # POST endpoint for creating texts
-│   │   │       └── [id]/
-│   │   │           └── route.ts       # GET endpoint for retrieving texts
-│   │   ├── view/
-│   │   │   └── [id]/
-│   │   │       └── page.tsx           # View page for shared texts
-│   │   ├── globals.css                # Global styles
-│   │   ├── layout.tsx                 # Root layout
-│   │   └── page.tsx                   # Home page
-│   ├── lib/
-│   │   └── mongodb.ts                 # MongoDB connection logic
-│   └── models/
-│       └── Text.ts                    # Mongoose schema for texts
-├── .env.local                         # Environment variables (create this)
-├── global.d.ts                        # TypeScript global declarations
-├── package.json                       # Dependencies
-├── tsconfig.json                      # TypeScript configuration
-├── next.config.js                     # Next.js configuration
-├── tailwind.config.js                 # Tailwind CSS configuration
-└── postcss.config.js                  # PostCSS configuration
-```
 
 ## 🚀 Deployment
-
-### Deploy to Vercel
-1. Push your code to GitHub
-2. Go to [vercel.com](https://vercel.com)
-3. Import your GitHub repository
-4. Add environment variable:
-   - Key: `MONGODB_URI`
-   - Value: Your MongoDB connection string
-5. Deploy
 
 ### Deploy with Docker
 1. Build the Docker image:
@@ -185,33 +134,4 @@ pastebin/
 - **Frontend**: Next.js 14, React 18, TypeScript
 - **Styling**: Tailwind CSS
 - **Backend**: Next.js API Routes
-- **Database**: MongoDB with Mongoose ODM
-
-## 📝 API Endpoints
-
-### Create Text
-```http
-POST /api/text
-Content-Type: application/json
-
-{
-  "text": "Your text content",
-  "expirationType": "views" | "time",
-  "expirationValue": 10
-}
-
-Response: { "id": "unique_text_id" }
-```
-
-### Get Text
-```http
-GET /api/text/[id]
-
-Response: {
-  "text": "Text content",
-  "views": 5,
-  "maxViews": 10,
-  "expiresAt": "2026-01-08T10:00:00.000Z",
-  "isLastView": false
-}
-```
+- **Database**: MongoDB 
