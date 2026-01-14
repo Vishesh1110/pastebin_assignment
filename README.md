@@ -5,6 +5,9 @@ A modern web application for sharing text snippets with customizable expiration 
 ## Demo Video
 ![Image](https://github.com/user-attachments/assets/8bf223d6-1924-4c7a-8989-5ebefdd6d0d3)
 
+## Detailed video and thought process
+[Click for detailed video](https://drive.google.com/file/d/1oj2obu_ePvQWUZQPny-fbyPbpaF6oIIN/view?usp=sharing)
+
 ## Features Implemented
 
 ### Core Features
